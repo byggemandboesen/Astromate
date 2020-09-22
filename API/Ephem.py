@@ -1,3 +1,4 @@
+from ephem import degree
 import ephem
 
 from datetime import datetime
@@ -13,7 +14,6 @@ def getObserver(lat, lon, elevation):
 
 
 # Returns body/object data from observer data
-# TODO: Add the rest of the bodies
 def getSolarSystemBodyData(observer, objectName):
 
     objectName = objectName.lower()
@@ -43,3 +43,10 @@ def getSolarSystemBodyData(observer, objectName):
         return 'Invalid body'
 
     return data
+
+
+# Returns current lat/lon coordinates from given TLE
+def getSatelliteData(TLE):
+    SatTLE = ephem.readtle(TLE[0], TLE[1], TLE[2])
+    SatTLE.compute()
+    return SatTLE.sublat / degree, SatTLE.sublong / degree

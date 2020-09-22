@@ -18,6 +18,8 @@ def root():
         ]
     })
 
+# ------------------------------- Solar system ------------------------------- #
+
 # Returns a list of basic solar system objects
 @app.route('/SolarSystemBodies', methods=['GET'])
 def SolarSystemBodiesNames():
@@ -25,10 +27,9 @@ def SolarSystemBodiesNames():
 
 
 # Returns current alt/az coordinates of solar system body
-# TODO: Add request body validation
-# TODO: integrate req body data in url and access as request.form['name'] and etc??
 @app.route('/SolarSystemBody')
 def SolarSystemBodyCoordinates():
+    # Checks if request body is null for some odd reason
     if (request.json is None):
         return ('lat, lon, elev and name of body wasn\'t given in request body!')
 
@@ -39,3 +40,26 @@ def SolarSystemBodyCoordinates():
         "alt": alt,
         "az": az
     })
+
+
+# -------------------------------- Satellites -------------------------------- #
+
+# Returns a list of satellite catalog numbers and their name
+# TODO: Return list of satellite names and their catalog numbers
+
+
+# Returns current lat/lon coordinates of satellite from its catalog number and current observer location
+@app.route('/Satellite', methods=['GET'])
+def SatelliteCoordinates():
+    # Checks if request body is null for some odd reason
+    if(request.json is None):
+        return ('lat, lon, elev and catalog number wasn\'t given in request body!')
+    
+    UserParams = request.json
+    lat, lon = Satellites.getCoords(UserParams)
+
+    return jsonify({
+        "lat": lat,
+        "lon": lon
+    })
+
