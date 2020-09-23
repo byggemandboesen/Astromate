@@ -46,7 +46,7 @@ def getSolarSystemBodyData(observer, objectName):
 
 
 # Returns current lat/lon coordinates from given TLE
-def getSatelliteData(TLE):
+def getSatelliteData(TLE, observer):
     SatTLE = ephem.readtle(TLE[0], TLE[1], TLE[2])
-    SatTLE.compute()
-    return SatTLE.sublat / degree, SatTLE.sublong / degree
+    SatTLE.compute(observer)
+    return SatTLE
