@@ -51,11 +51,37 @@ def SolarSystemBodyCoordinates():
 @app.route('/Satellites', methods=['GET'])
 def SatelliteNames():
     return jsonify({
-        "ISS (ZARYA)": 25544,
+        "Elektro-L2": 41105,
+        "Fengyun 1A": 19467,
+        "Fengyun 1B": 20888,
+        "Fengyun 1C": 25730,
+        "Fengyun 1D": 27431,
+        "Fengyun 2A": 24834,
+        "Fengyun 2B": 26382,
+        "Fengyun 2C": 28451,
+        "Fengyun 2D": 29640,
+        "Fengyun 2E": 33463,
+        "Fengyun 2F": 38049,
+        "Fengyun 2G": 40367,
+        "Fengyun 3A": 32958,
+        "Fengyun 3B": 37214,
+        "Fengyun 3C": 39260,
+        "Fengyun 3D": 43010,
+        "Fengyun 4A": 41882,
+        "GEO-KOMPSAT-2A": 43823,
+        "GOES 16": 41866,
+        "GOES 17": 43226,
         "METEOR-M2": 40069,
-        "NOAA-19": 33591,
+        "METEOR-M2 2": 44387,
+        "METOP-A": 29499,
+        "METOP-B": 38771,
+        "METOP-C": 43689,
         "NOAA-15": 25338,
-        "NOAA-18": 28654 
+        "NOAA-18": 28654,
+        "NOAA-19": 33591,
+        "NOAA-20": 43013,
+        "SUOMI NPP": 37849,
+        "ISS (ZARYA)": 25544,
     })
 
 # Returns current lat/lon coordinates of satellite from its catalog number and current observer location
