@@ -25,4 +25,10 @@ def getCoords(params):
         }
     except Exception as error:
         print(error)
-        return "error", "error", "error", "error", "error"
+        return {
+            "name": "error",
+            "alt": "error",
+            "az": "error",
+            "lat": "error",
+            "lon": "error"
+        }
