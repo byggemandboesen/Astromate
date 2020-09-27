@@ -6,6 +6,10 @@ import 'package:provider/provider.dart';
 import 'package:astromate/theme.dart';
 import 'package:astromate/splashscreen.dart';
 
+// Screens:
+import 'package:astromate/screens/homescreen/homescreen.dart';
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -23,11 +27,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (context) => themeStatus(),
-        child: Consumer<themeStatus>(
-          builder: (context, themeStatus, child)=> MaterialApp(
-            theme: themeStatus.themeBool ? Themes().lightTheme : Themes().darkTheme,
+        create: (context) => ThemeStatus(),
+        child: Consumer<ThemeStatus>(
+          builder: (context, themeClass, child)=> MaterialApp(
+            theme: themeClass.themeBool ? Themes().lightTheme : Themes().darkTheme,
             routes: {
+              '/homescreen': (context) => HomeScreen(),
             },
             home: Splash(),
           )

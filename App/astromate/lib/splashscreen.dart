@@ -6,14 +6,15 @@ class Splash extends StatefulWidget {
   _SplashState createState() => _SplashState();
 }
 
-class _SplashState extends State<SplashScreen> {
+class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    return SplashScreen(
-      seconds: 3,
-      title: Text('Astromate'),
+    return new SplashScreen(
+      seconds: 2,
+      title: Text('Astromate', style: Theme.of(context).textTheme.headline1,),
       backgroundColor: Theme.of(context).accentColor,
       loaderColor: Theme.of(context).primaryColor,
+      navigateAfterSeconds: '/homescreen',
     );
   }
 }

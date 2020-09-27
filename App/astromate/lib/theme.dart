@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// Colors used in the ThemeData
 const red = Color.fromRGBO(175, 0, 0, 1);
-const grey = Color.fromRGBO(100, 100, 100, 1);
+const black = Colors.black;
 const blue = Color.fromRGBO(0, 115, 240, 1);
 
 
-// TODO: Probably fix the text themes
+// Light and dark theme
 class Themes{
 
   // Light theme
   ThemeData lightTheme = ThemeData(
       brightness: Brightness.light,
       backgroundColor: Colors.white,
-      primaryColor: blue,
-      accentColor: grey,
+      primaryColor: Colors.white,
+      accentColor: blue,
       appBarTheme: AppBarTheme(
-          color: grey,
+          color: blue,
           iconTheme: IconThemeData(
-              color: blue
+              color: Colors.white
           ),
           textTheme: ThemeData.light().textTheme.copyWith(
-            headline1: TextStyle(color: blue, fontSize: 30, fontFamily: 'Black'),
+            headline1: TextStyle(color: Colors.white, fontSize: 30, fontFamily: 'Agency', fontWeight: FontWeight.bold),
           )
       ),
       textTheme: ThemeData.light().textTheme.copyWith(
-          bodyText1: TextStyle(color: blue, fontSize: 17, fontFamily: 'Light'),
-          bodyText2: TextStyle(color: blue.withOpacity(0.5), fontSize: 15, fontFamily: 'Light'),
-          headline1: TextStyle(color: blue, fontSize: 30, fontFamily: 'Black'),
-          subtitle1: TextStyle(color: blue, fontSize: 25, fontFamily: 'Light'),
-          subtitle2: TextStyle(color: blue, fontSize: 17, fontFamily: 'Light', fontWeight: FontWeight.bold)
+          bodyText1: TextStyle(color: blue, fontSize: 17, fontFamily: 'Agency'),
+          bodyText2: TextStyle(color: blue.withOpacity(0.5), fontSize: 15, fontFamily: 'Agency'),
+          subtitle1: TextStyle(color: blue, fontSize: 25, fontFamily: 'Agency'),
+          subtitle2: TextStyle(color: blue, fontSize: 17, fontFamily: 'Agency', fontWeight: FontWeight.bold),
+          headline1: TextStyle(color: Colors.white, fontSize: 30, fontFamily: 'Agency', fontWeight: FontWeight.bold),
       ),
   );
 
@@ -39,31 +40,32 @@ class Themes{
       brightness: Brightness.dark,
       backgroundColor: Colors.grey[900],
       primaryColor: red,
-      accentColor: grey,
+      accentColor: black,
       appBarTheme: AppBarTheme(
-          color: grey,
+          color: black,
           iconTheme: IconThemeData(
               color: red
           ),
           textTheme: ThemeData.light().textTheme.copyWith(
-            headline1: TextStyle(color: red, fontSize: 30, fontFamily: 'Black'),
+            headline1: TextStyle(color: red, fontSize: 30, fontFamily: 'Agency', fontWeight: FontWeight.bold),
           )
       ),
       textTheme: ThemeData.light().textTheme.copyWith(
-          bodyText1: TextStyle(color: red, fontSize: 17, fontFamily: 'Light'),
-          bodyText2: TextStyle(color: red.withOpacity(0.5), fontSize: 15, fontFamily: 'Light'),
-          headline1: TextStyle(color: red, fontSize: 30, fontFamily: 'Black'),
-          subtitle1: TextStyle(color: red, fontSize: 25, fontFamily: 'Light'),
-          subtitle2: TextStyle(color: red, fontSize: 17, fontFamily: 'Light', fontWeight: FontWeight.bold)
+          bodyText1: TextStyle(color: red, fontSize: 17, fontFamily: 'Agency'),
+          bodyText2: TextStyle(color: red.withOpacity(0.5), fontSize: 15, fontFamily: 'Agency'),
+          subtitle1: TextStyle(color: red, fontSize: 25, fontFamily: 'Agency'),
+          subtitle2: TextStyle(color: red, fontSize: 17, fontFamily: 'Agency', fontWeight: FontWeight.bold),
+          headline1: TextStyle(color: red, fontSize: 30, fontFamily: 'Agency', fontWeight: FontWeight.bold),
       ),
   );
 
 }
 
+// Light theme boolean
 bool isLightTheme = true;
 
-class themeStatus extends ChangeNotifier{
-    // Function that updates the light/dark mode boolean with new value
+class ThemeStatus extends ChangeNotifier{
+  // Function that updates the light/dark mode boolean with new value
   // Reassigns new bool value in "Shared preferences" to load either light/dark when opening app
   updateTheme() async {
     isLightTheme = !isLightTheme;
