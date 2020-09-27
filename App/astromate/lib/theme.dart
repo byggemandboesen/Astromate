@@ -29,7 +29,7 @@ class Themes{
           bodyText1: TextStyle(color: blue, fontSize: 17, fontFamily: 'Agency'),
           bodyText2: TextStyle(color: blue.withOpacity(0.5), fontSize: 15, fontFamily: 'Agency'),
           subtitle1: TextStyle(color: blue, fontSize: 25, fontFamily: 'Agency'),
-          subtitle2: TextStyle(color: blue, fontSize: 17, fontFamily: 'Agency', fontWeight: FontWeight.bold),
+          subtitle2: TextStyle(color: blue, fontSize: 20, fontFamily: 'Agency', fontWeight: FontWeight.bold),
           headline1: TextStyle(color: Colors.white, fontSize: 30, fontFamily: 'Agency', fontWeight: FontWeight.bold),
       ),
   );
@@ -54,7 +54,7 @@ class Themes{
           bodyText1: TextStyle(color: red, fontSize: 17, fontFamily: 'Agency'),
           bodyText2: TextStyle(color: red.withOpacity(0.5), fontSize: 15, fontFamily: 'Agency'),
           subtitle1: TextStyle(color: red, fontSize: 25, fontFamily: 'Agency'),
-          subtitle2: TextStyle(color: red, fontSize: 17, fontFamily: 'Agency', fontWeight: FontWeight.bold),
+          subtitle2: TextStyle(color: red, fontSize: 20, fontFamily: 'Agency', fontWeight: FontWeight.bold),
           headline1: TextStyle(color: red, fontSize: 30, fontFamily: 'Agency', fontWeight: FontWeight.bold),
       ),
   );

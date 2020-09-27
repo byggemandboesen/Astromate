@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:astromate/theme.dart';
+import 'package:astromate/screens/homescreen/components.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -10,7 +11,6 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          automaticallyImplyLeading: false,
           title: Text('Astromate', style: Theme.of(context).textTheme.headline1,),
           actions: [
           Consumer<ThemeStatus>(
@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget {
           ),
           ],
         ),
+        drawer: HomeScreenDrawer(),
         body: Center(child: Text('Welcome!', style: Theme.of(context).textTheme.subtitle1,),),
       ),
     );

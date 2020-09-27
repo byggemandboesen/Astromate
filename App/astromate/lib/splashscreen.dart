@@ -15,6 +15,7 @@ class _SplashState extends State<Splash> {
       backgroundColor: Theme.of(context).accentColor,
       loaderColor: Theme.of(context).primaryColor,
       navigateAfterSeconds: '/homescreen',
+      // TODO: Create app logo
     );
   }
 }
