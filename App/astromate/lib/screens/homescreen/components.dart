@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:astromate/theme.dart';
+
 class HomeScreenDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -8,12 +10,13 @@ class HomeScreenDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Theme.of(context).accentColor
+              color: Theme.of(context).primaryColor
             ),
             child: Center(
               child: Text('Welcome!', style: Theme.of(context).textTheme.headline1,),
             ),
           ),
+          // TODO: Add onTap functions
           DrawerItem(
             () => {},
             Icons.build,
@@ -43,9 +46,9 @@ class HomeScreenDrawer extends StatelessWidget {
 class DrawerItem extends StatelessWidget {
 
   // Requirred items for each listtile in the drawer
-  Function onTap;
-  IconData itemIcon;
-  String itemTitle;
+  final Function onTap;
+  final IconData itemIcon;
+  final String itemTitle;
   
   DrawerItem(this.onTap, this.itemIcon, this.itemTitle);
 
@@ -58,18 +61,21 @@ class DrawerItem extends StatelessWidget {
       height: height*0.04,
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: InkWell(
-        splashColor: Theme.of(context).accentColor,
+        splashColor: Theme.of(context).primaryColor,
         onTap: onTap,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(right: 10), child: Icon(itemIcon)),
+                Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: Icon(itemIcon, color: ThemeStatus().themeBool ? Colors.black : Theme.of(context).primaryColor)
+                  ),
                 Text(itemTitle, style: Theme.of(context).textTheme.subtitle2,),
               ],
             ),
-            Icon(Icons.chevron_right)
+            Icon(Icons.chevron_right, color: ThemeStatus().themeBool ? Colors.black : Theme.of(context).primaryColor)
           ],
         ),
       ),

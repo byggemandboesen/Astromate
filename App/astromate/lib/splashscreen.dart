@@ -12,8 +12,8 @@ class _SplashState extends State<Splash> {
     return new SplashScreen(
       seconds: 2,
       title: Text('Astromate', style: Theme.of(context).textTheme.headline1,),
-      backgroundColor: Theme.of(context).accentColor,
-      loaderColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).primaryColor,
+      loaderColor: Theme.of(context).accentColor,
       navigateAfterSeconds: '/homescreen',
       // TODO: Create app logo
     );

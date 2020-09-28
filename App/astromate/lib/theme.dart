@@ -14,8 +14,8 @@ class Themes{
   ThemeData lightTheme = ThemeData(
       brightness: Brightness.light,
       backgroundColor: Colors.white,
-      primaryColor: Colors.white,
-      accentColor: blue,
+      primaryColor: blue,
+      accentColor: Colors.white,
       appBarTheme: AppBarTheme(
           color: blue,
           iconTheme: IconThemeData(
@@ -39,8 +39,8 @@ class Themes{
   ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
       backgroundColor: Colors.grey[900],
-      primaryColor: red,
-      accentColor: black,
+      primaryColor: black,
+      accentColor: red,
       appBarTheme: AppBarTheme(
           color: black,
           iconTheme: IconThemeData(

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:astromate/theme.dart';
 import 'package:astromate/screens/homescreen/components.dart';
+import 'package:astromate/screens/homescreen/body.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         drawer: HomeScreenDrawer(),
-        body: Center(child: Text('Welcome!', style: Theme.of(context).textTheme.subtitle1,),),
+        body: HomeBody()
       ),
     );
   }
