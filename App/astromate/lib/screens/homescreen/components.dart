@@ -18,7 +18,7 @@ class HomeScreenDrawer extends StatelessWidget {
           ),
           // TODO: Add onTap functions
           DrawerItem(
-            () => {},
+            () => {Navigator.of(context).pushNamed('/equipment')},
             Icons.build,
             'Equipment'
           ),
