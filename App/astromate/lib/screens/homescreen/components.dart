@@ -18,24 +18,24 @@ class HomeScreenDrawer extends StatelessWidget {
           ),
           // TODO: Add onTap functions
           DrawerItem(
-            () => {Navigator.of(context).pushNamed('/equipment')},
+            () => {Navigator.of(context).pushNamed('/telescopes')},
             Icons.build,
-            'Equipment'
+            'Telescopes'
           ),
           DrawerItem(
             () => {},
             Icons.edit_location,
-            'Locations'
+            'Eyepieces'
           ),
           DrawerItem(
             () => {},
             Icons.settings,
-            'Settings'
+            'Lenses'
           ),
           DrawerItem(
             () => {},
             Icons.info,
-            'About'
+            'Cameras'
           )
         ],
       ),

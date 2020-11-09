@@ -8,7 +8,7 @@ import 'package:astromate/splashscreen.dart';
 
 // Screens:
 import 'package:astromate/screens/homescreen/homescreen.dart';
-import 'package:astromate/screens/equipment/equipment.dart';
+import 'package:astromate/screens/telescopes/telescopes.dart';
 
 
 void main() async {
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             theme: themeClass.themeBool ? Themes().lightTheme : Themes().darkTheme,
             routes: {
               '/homescreen': (context) => HomeScreen(),
-              '/equipment': (context) => EquipmentScreen()
+              '/telescopes': (context) => TelescopeScreen()
             },
             home: Splash(),
           )

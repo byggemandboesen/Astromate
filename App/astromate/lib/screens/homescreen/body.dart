@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeBody extends StatefulWidget {
   @override
@@ -31,6 +32,23 @@ class _HomeBodyState extends State<HomeBody> with SingleTickerProviderStateMixin
 
   animationController.forward();
 
+  // TODO: Read telescopes from shared preferences
+  return Column(
+    children: [
+      ListViewItem(
+        'Takahashi FC-76DCU',
+        Icons.done,
+        () => {}
+      ),
+      ListViewItem(
+        'Skywatcher Evostar 72ED DS-Pro',
+        Icons.done,
+        () => {}
+      ),
+    ],
+  );
+
+    /*
     return AnimatedBuilder(
       animation: animationController,
       builder: (BuildContext context, Widget child){
@@ -65,6 +83,9 @@ class _HomeBodyState extends State<HomeBody> with SingleTickerProviderStateMixin
         );
       },
     );
+    */
+
+
   }
 }
 
