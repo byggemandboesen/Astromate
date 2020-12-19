@@ -1,10 +1,10 @@
+import 'package:astromate/screens/compass/compass.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'package:astromate/theme.dart';
-import 'package:astromate/splashscreen.dart';
 
 // Screens:
 import 'package:astromate/screens/homescreen/homescreen.dart';
@@ -34,9 +34,10 @@ class MyApp extends StatelessWidget {
             theme: themeClass.themeBool ? Themes().lightTheme : Themes().darkTheme,
             routes: {
               '/homescreen': (context) => HomeScreen(),
-              '/telescopes': (context) => TelescopeScreen()
+              '/telescopes': (context) => TelescopeScreen(),
+              '/compass': (context) => CompassScreen()
             },
-            home: Splash(),
+            home: HomeScreen(),
           )
         ),
       );

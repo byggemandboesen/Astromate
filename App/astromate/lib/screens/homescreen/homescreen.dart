@@ -1,3 +1,4 @@
+import 'package:astromate/components.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,23 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('Astromate', style: Theme.of(context).textTheme.headline1,),
-          actions: [
-          Consumer<ThemeStatus>(
-            builder: (context, themeClass, child){
-              return IconButton(
-                icon: themeClass.themeBool ? Icon(Icons.brightness_3) : Icon(Icons.brightness_7),
-                iconSize: 30,
-                onPressed: () async{
-                  await themeClass.updateTheme();
-                },
-              );
-            }
-          ),
-          ],
-        ),
+        appBar: defultAppBar('Astromate', context),
         drawer: HomeScreenDrawer(),
         body: HomeBody()
       ),

@@ -22,7 +22,7 @@ class HomeScreenDrawer extends StatelessWidget {
             Icons.build,
             'Telescopes'
           ),
-          DrawerItem(
+          DrawerItem( 
             () => {},
             Icons.edit_location,
             'Eyepieces'

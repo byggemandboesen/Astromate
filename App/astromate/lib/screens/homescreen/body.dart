@@ -33,22 +33,6 @@ class _HomeBodyState extends State<HomeBody> with SingleTickerProviderStateMixin
   animationController.forward();
 
   // TODO: Read telescopes from shared preferences
-  return Column(
-    children: [
-      ListViewItem(
-        'Takahashi FC-76DCU',
-        Icons.done,
-        () => {}
-      ),
-      ListViewItem(
-        'Skywatcher Evostar 72ED DS-Pro',
-        Icons.done,
-        () => {}
-      ),
-    ],
-  );
-
-    /*
     return AnimatedBuilder(
       animation: animationController,
       builder: (BuildContext context, Widget child){
@@ -56,36 +40,24 @@ class _HomeBodyState extends State<HomeBody> with SingleTickerProviderStateMixin
         return Transform(
           transform: Matrix4.translationValues(animation.value*width, 0, 0),
           child: ListView(
-            shrinkWrap: true,
             children: [
               ListViewItem(
-                'Visual',
-                Icons.remove_red_eye,
+                'Equipment calculator',
+                Icons.format_list_numbered,
                 () => {}
               ),
               ListViewItem(
-                'Imaging',
-                Icons.camera,
-                () => {}
+                'Compass and bubble level',
+                Icons.navigation,
+                () => {
+                  Navigator.of(context).pushNamed('/compass')
+                }
               ),
-              ListViewItem(
-                'Solar system',
-                Icons.brightness_3,
-                () => {}
-              ),
-              ListViewItem(
-                'Satellites',
-                Icons.wifi,
-                () => {},
-              )
             ],
-          ),
+          )
         );
       },
     );
-    */
-
-
   }
 }
 
